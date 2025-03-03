@@ -1,0 +1,334 @@
+{
+    "info": {
+        "_postman_id": "91b2b562-cae0-4a44-82f7-9a5d6c78c4b2",
+        "name": "ecommerce",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "auth ",
+            "item": [
+                {
+                    "name": "Signup route",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/signup",
+                            "path": [
+                                "signup"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"username\": \"Ram\", \n  \"email\": \"ram2gmail.com\", \n  \"password\": \"1234\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Login route",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/login",
+                            "path": [
+                                "login"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"ram@gmail.com\", \n  \"password\": \"1234\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cart",
+            "item": [
+                {
+                    "name": "create cart item",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/cart",
+                            "path": [
+                                "cart"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"productId\": 1, \n  \"quantity\": 3\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "fetch  cart item",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/cart",
+                            "path": [
+                                "cart"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "edit cart item quantity",
+                    "request": {
+                        "method": "PATCH",
+                        "url": {
+                            "raw": "http://localhost:3000/cart",
+                            "path": [
+                                "cart"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"cartItemId\": 1, \n  \"quantity\": 2\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "delete cart item",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:3000/cart",
+                            "path": [
+                                "cart"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"cartItemId\": 1 \n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "orders",
+            "item": [
+                {
+                    "name": "create order",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/orders",
+                            "path": [
+                                "orders"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get user orders",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/orders",
+                            "path": [
+                                "orders"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "products",
+            "item": [
+                {
+                    "name": "create product",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:3000/products",
+                            "path": [
+                                "products"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"car\", \n  \"imageUrl\": \"https://picsum.photos/seed/picsum/200/300\",\n  \"description\": \"A beautiful car\", \n  \"price\": 300\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get products",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/products",
+                            "path": [
+                                "products"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MDg5NjQyMH0.sGPlEtzSkYo3lyqr6hX2VkwUDdnvMyVh86BteDKyuY8",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
