@@ -7,7 +7,6 @@ export const getAllProducts = async () => {
   return products;
 };
 
-//remove instock
 export const createProduct = async (
   inStock = true,
   name,
@@ -15,7 +14,6 @@ export const createProduct = async (
   description,
   price
 ) => {
-  
   const db = await dbPromise;
   const createProductQuery =
     "INSERT INTO products(name, image_url, description, price, in_stock) values(?, ?, ?, ?, ?)";

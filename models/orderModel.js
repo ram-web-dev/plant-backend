@@ -3,7 +3,7 @@ import dbPromise from "../db/connectDb.js";
 export const createUserOrder = async (userId) => {
   const db = await dbPromise;
   const createUserOrderQuery = "INSERT INTO orders(user_id) values(?)";
-  const order = db.run(createUserOrderQuery, [userId]);
+  const order = await db.run(createUserOrderQuery, [userId]);
   return order;
 };
 
